@@ -1,0 +1,13 @@
+# Never commit private keys to GitHub!
+nginx.private.key
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Wireshark capture files (too large for Git usually)
+*.pcapng
+*.pcap
+
+# Editor
+.vscode/

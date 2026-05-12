@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mehmet Surmeli — Network Security Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-grid">
+      <div class="hero-badge">NETWORK SECURITY · VIZJA UNIVERSITY · WARSAW</div>
+      <h1 class="hero-name">Mehmet<br><span class="accent">Surmeli</span></h1>
+      <p class="hero-sub">Software Engineering Student &amp; Network Security Practitioner</p>
+      <div class="hero-tags">
+        <span class="tag">TLS/SSL</span>
+        <span class="tag">IPSec VPN</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Nginx</span>
+        <span class="tag">Wireshark</span>
+        <span class="tag">OpenSSL</span>
+        <span class="tag">Cisco Packet Tracer</span>
+        <span class="tag">strongSwan</span>
+      </div>
+      <a href="#projects" class="cta-btn">View My Lab Work ↓</a>
+    </div>
+    <div class="hero-terminal">
+      <div class="terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="term-title">mehmet@vizja ~ $</span>
+      </div>
+      <div class="terminal-body" id="terminal-output"></div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-label">01 / ABOUT</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I am a Software Engineering student at Vizja University in Warsaw, Poland, 
+          specialising in Network Security and Secure Software Development. 
+          Throughout my studies I have completed hands-on labs covering 
+          the full stack of network security — from Cisco router ACL configuration 
+          through to IPSec VPN tunnels using strongSwan and IKEv2.
+        </p>
+        <p>
+          I enjoy working at the intersection of low-level networking and 
+          practical security hardening. I am comfortable on the Linux command line, 
+          in VirtualBox environments, and with Docker-based deployments.
+        </p>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">University</span><span class="info-val">Vizja University, Warsaw</span></div>
+          <div class="info-item"><span class="info-label">Programme</span><span class="info-val">Software Engineering</span></div>
+          <div class="info-item"><span class="info-label">Focus Areas</span><span class="info-val">Network Security · Secure Software Dev</span></div>
+          <div class="info-item"><span class="info-label">Languages</span><span class="info-val">English · Turkish</span></div>
+          <div class="info-item"><span class="info-label">Location</span><span class="info-val">Warsaw, Poland</span></div>
+        </div>
+      </div>
+      <div class="skills-panel">
+        <h3>Skills</h3>
+        <div class="skill-group">
+          <div class="skill-group-label">Network Security</div>
+          <div class="skill-bar-wrap"><span class="skill-name">Wireshark / TShark</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+          <div class="skill-bar-wrap"><span class="skill-name">Cisco Packet Tracer / ACLs</span><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="skill-bar-wrap"><span class="skill-name">TLS/SSL / Nginx</span><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="skill-bar-wrap"><span class="skill-name">OpenSSL / PKI</span><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
+          <div class="skill-bar-wrap"><span class="skill-name">strongSwan / IPSec / IKEv2</span><div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Dev & Tools</div>
+          <div class="skill-bar-wrap"><span class="skill-name">Python</span><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
+          <div class="skill-bar-wrap"><span class="skill-name">C++</span><div class="bar"><div class="bar-fill" style="width:65%"></div></div></div>
+          <div class="skill-bar-wrap"><span class="skill-name">Java</span><div class="bar"><div class="bar-fill" style="width:60%"></div></div></div>
+          <div class="skill-bar-wrap"><span class="skill-name">Docker / Docker Compose</span><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
+          <div class="skill-bar-wrap"><span class="skill-name">HTML / CSS / JavaScript</span><div class="bar"><div class="bar-fill" style="width:65%"></div></div></div>
+          <div class="skill-bar-wrap"><span class="skill-name">Linux (Ubuntu)</span><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / LABS -->
+  <section class="section dark" id="projects">
+    <div class="section-label">02 / LAB PROJECTS</div>
+    <h2>Network Security Labs</h2>
+    <p class="section-intro">All labs completed as part of the Network Security module at Vizja University. Each lab involved real hands-on configuration, traffic capture, and written technical reports.</p>
+
+    <div class="labs-grid">
+
+      <!-- THIS LAB -->
+      <div class="lab-card featured">
+        <div class="lab-number">Lab 6</div>
+        <div class="lab-badge">Current Lab</div>
+        <h3>HTTPS with Nginx &amp; TLS/SSL</h3>
+        <p>Deployed a personal portfolio website using Nginx in a Docker container. Configured a self-signed TLS/SSL certificate with OpenSSL (RSA 4096-bit), enabled HTTPS on port 443, and captured both HTTP and HTTPS traffic using Wireshark to analyse the TLS handshake in detail.</p>
+        <div class="lab-tech">
+          <span>Nginx</span><span>Docker</span><span>OpenSSL</span><span>TLS 1.2/1.3</span><span>Wireshark</span>
+        </div>
+        <div class="lab-details">
+          <div class="detail-item"><span class="di-label">Certificate</span><span>RSA 4096-bit, Self-Signed, 365 days</span></div>
+          <div class="detail-item"><span class="di-label">Protocols</span><span>TLSv1.2 &amp; TLSv1.3</span></div>
+          <div class="detail-item"><span class="di-label">Captures</span><span>http-capture.pcapng · https-capture.pcapng</span></div>
+        </div>
+      </div>
+
+      <!-- IPSEC VPN -->
+      <div class="lab-card">
+        <div class="lab-number">Lab 5</div>
+        <h3>Gateway-to-Gateway IPSec VPN</h3>
+        <p>Set up a full Gateway-to-Gateway IPSec VPN tunnel between two Ubuntu 24.04 VMs in VirtualBox using strongSwan 5.9.13 with IKEv2 and certificate-based authentication. Built a complete PKI from scratch with OpenSSL (Ed25519) to issue certificates for both gateways. Configured static IPs via Netplan, verified the tunnel with tshark, and documented the PAD, SAD, and SPD databases.</p>
+        <div class="lab-tech">
+          <span>strongSwan</span><span>IKEv2</span><span>IPSec/ESP</span><span>OpenSSL</span><span>Ubuntu</span><span>VirtualBox</span><span>Netplan</span>
+        </div>
+        <div class="lab-details">
+          <div class="detail-item"><span class="di-label">GatewayA</span><span>192.168.100.1 (enp0s8)</span></div>
+          <div class="detail-item"><span class="di-label">GatewayB</span><span>192.168.100.2 (enp0s8)</span></div>
+          <div class="detail-item"><span class="di-label">Cipher Suite</span><span>AES-CBC-256 / HMAC-SHA2-256 / MODP-2048</span></div>
+          <div class="detail-item"><span class="di-label">Auth</span><span>Certificate-based PKI (Ed25519)</span></div>
+        </div>
+      </div>
+
+      <!-- TELNET/SSH -->
+      <div class="lab-card">
+        <div class="lab-number">Lab 5.1 &amp; 5.2</div>
+        <h3>Telnet vs SSH Traffic Analysis &amp; ARP</h3>
+        <p>Compared Telnet (unencrypted) and SSH (encrypted) by capturing live traffic with tshark on the loopback interface of Ubuntu VMs. Successfully captured the password "secret123" in plaintext character-by-character in the Telnet stream — proving that unencrypted protocols are dangerous. SSH capture showed only encrypted gibberish. Lab 5.2 involved analysing a provided ARP pcapng file identifying ARP Request and Reply packets by MAC address.</p>
+        <div class="lab-tech">
+          <span>tshark</span><span>Telnet</span><span>SSH</span><span>Ubuntu VMs</span><span>VirtualBox</span><span>ARP</span>
+        </div>
+        <div class="lab-details">
+          <div class="detail-item"><span class="di-label">Setup</span><span>NAT + Port Forwarding (host 2222→VM 22)</span></div>
+          <div class="detail-item"><span class="di-label">Telnet result</span><span>Password visible in plaintext</span></div>
+          <div class="detail-item"><span class="di-label">SSH result</span><span>Fully encrypted payload</span></div>
+          <div class="detail-item"><span class="di-label">ARP lab</span><span>2 packets: Request + Reply identified</span></div>
+        </div>
+      </div>
+
+      <!-- PKI -->
+      <div class="lab-card">
+        <div class="lab-number">Lab 4</div>
+        <h3>PKI Lifecycle with OpenSSL (Ed25519)</h3>
+        <p>Simulated a full Public Key Infrastructure lifecycle using OpenSSL. Acted as Certificate Authority, Web Server, and Client in sequence. Generated a CA root key and self-signed certificate, created a server CSR, issued a signed server certificate, and verified the certificate chain. Answered conceptual questions on MitM attacks, TLS handshake mechanics, and the difference between a stolen server.key vs a stolen rootCA.key.</p>
+        <div class="lab-tech">
+          <span>OpenSSL</span><span>Ed25519</span><span>PKI</span><span>X.509</span><span>CSR</span>
+        </div>
+        <div class="lab-details">
+          <div class="detail-item"><span class="di-label">CA Key</span><span>rootCA.key (Ed25519)</span></div>
+          <div class="detail-item"><span class="di-label">Server cert</span><span>CN=secure-lab.local, 365 days</span></div>
+          <div class="detail-item"><span class="di-label">Verify result</span><span>server.crt: OK</span></div>
+        </div>
+      </div>
+
+      <!-- ACL -->
+      <div class="lab-card">
+        <div class="lab-number">Lab 3</div>
+        <h3>Access Control Lists — Cisco Packet Tracer</h3>
+        <p>Configured 10 stages of Standard and Extended ACLs on Cisco routers in Packet Tracer. Worked through blocking individual hosts, entire subnets, specific protocols (ICMP, HTTP, FTP), named ACLs, and IPv6 ACLs. Verified every stage with ping tests before and after. Final stage (Stage 10) explored IPSec SPD "interesting traffic" selection using ACL permit statements — demonstrating the connection between ACL logic and VPN policy.</p>
+        <div class="lab-tech">
+          <span>Cisco IOS</span><span>Packet Tracer</span><span>Standard ACL</span><span>Extended ACL</span><span>IPv6 ACL</span>
+        </div>
+        <div class="lab-details">
+          <div class="detail-item"><span class="di-label">Topology</span><span>PC1 — R1 — R2 — PC2 (3 subnets)</span></div>
+          <div class="detail-item"><span class="di-label">Stages</span><span>10 stages (host block → IPv6 → SPD)</span></div>
+          <div class="detail-item"><span class="di-label">Protocols filtered</span><span>ICMP, HTTP, FTP, Telnet, IPv6</span></div>
+        </div>
+      </div>
+
+      <!-- CIA TRIAD -->
+      <div class="lab-card">
+        <div class="lab-number">Lab 3.1</div>
+        <h3>CIA Triad &amp; Cryptography Report</h3>
+        <p>Wrote two research reports for the foundational concepts module. Assignment 1 covered the CIA Triad (Confidentiality, Integrity, Availability) with a comparison table and diagram. Assignment 2 covered five cryptographic concepts — Encoding, Hashing, Encryption, Digital Signatures, and Digital Certificates — sourced from NIST publications, with real OpenSSL examples from the PKI lab.</p>
+        <div class="lab-tech">
+          <span>CIA Triad</span><span>Cryptography</span><span>NIST</span><span>Hashing</span><span>Digital Signatures</span>
+        </div>
+      </div>
+
+      <!-- JAVA SOCKETS -->
+      <div class="lab-card">
+        <div class="lab-number">Labs 2–4 (Networking)</div>
+        <h3>Java Socket Programming — HTTP &amp; Echo Server</h3>
+        <p>Built an HTTP client in Java that performs raw TCP connections to a web server, sends a manually crafted HTTP GET request with headers, and parses the response. Also built an Echo Server and Client using ServerSocket — demonstrating how accept(), getInputStream(), and getOutputStream() work at the socket level. Discussed how SSL sockets would secure this at the Presentation Layer.</p>
+        <div class="lab-tech">
+          <span>Java</span><span>TCP Sockets</span><span>HTTP</span><span>ServerSocket</span>
+        </div>
+      </div>
+
+      <!-- WEEK 1 -->
+      <div class="lab-card">
+        <div class="lab-number">Lab 1</div>
+        <h3>Network Topology &amp; OSI/TCP-IP Models</h3>
+        <p>Built a multi-subnet network in Cisco Packet Tracer with 1 router, 2 switches, and end devices. Configured static routing between two subnets and verified connectivity with ping. Created OSI 7-layer and TCP/IP 4-layer diagrams in draw.io, plus an encapsulation/decapsulation diagram showing data transformation from Application Data → TCP Segment → IP Packet → Ethernet Frame → Bits.</p>
+        <div class="lab-tech">
+          <span>Cisco Packet Tracer</span><span>draw.io</span><span>OSI Model</span><span>TCP/IP</span><span>Subnetting</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECURE SOFTWARE PROJECT -->
+  <section class="section" id="other">
+    <div class="section-label">03 / OTHER PROJECTS</div>
+    <h2>Secure Software Development</h2>
+    <div class="other-grid">
+      <div class="other-card">
+        <div class="other-icon">🔐</div>
+        <h3>Secure Password Manager (Python)</h3>
+        <p class="other-course">Secure Software Development — Vizja University</p>
+        <p>Built a command-line password manager in Python with a partner (Zalina Muratova). The app uses AES-256 encryption (via the <code>cryptography</code> library) for all stored passwords, bcrypt for master password hashing, and stores everything in an encrypted JSON file. Followed OWASP principles for input validation and error handling. Presented to the class with a PowerPoint demo.</p>
+        <div class="lab-tech">
+          <span>Python</span><span>AES-256</span><span>bcrypt</span><span>OWASP</span><span>JSON storage</span>
+        </div>
+        <div class="lab-details">
+          <div class="detail-item"><span class="di-label">Files</span><span>encryption.py · auth.py · database.py · main.py</span></div>
+          <div class="detail-item"><span class="di-label">Key feature</span><span>IV (Initialization Vector) per encryption</span></div>
+        </div>
+      </div>
+
+      <div class="other-card">
+        <div class="other-icon">🌐</div>
+        <h3>Multi-Service Network — Cisco Packet Tracer</h3>
+        <p class="other-course">Network Technology — Final Project</p>
+        <p>Designed and deployed a full multi-subnet network with 2 routers, 3 switches, 8 PCs, and 5 servers (DHCP, DNS, FTP, Email, HTTP). Configured static routing between all subnets and verified end-to-end connectivity. Submitted as <code>Surmeli_M.pkt</code> with a full Word report.</p>
+        <div class="lab-tech">
+          <span>Cisco Packet Tracer</span><span>DHCP</span><span>DNS</span><span>FTP</span><span>HTTP</span><span>Static Routing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TLS EXPLAINER -->
+  <section class="section dark" id="tls">
+    <div class="section-label">04 / TLS EXPLAINED</div>
+    <h2>How TLS Works — The Handshake</h2>
+    <p class="section-intro">Part of this lab required capturing and analysing the TLS handshake. Here is what each stage does and what I observed in Wireshark.</p>
+    <div class="handshake-steps" id="handshake-steps">
+      <div class="hs-step" data-step="1">
+        <div class="hs-num">1</div>
+        <div class="hs-content">
+          <div class="hs-title">Client Hello</div>
+          <div class="hs-desc">The browser sends supported TLS versions (1.2 / 1.3), a list of cipher suites it supports, and a random value. This is fully visible in Wireshark — it is not yet encrypted.</div>
+        </div>
+      </div>
+      <div class="hs-step" data-step="2">
+        <div class="hs-num">2</div>
+        <div class="hs-content">
+          <div class="hs-title">Server Hello</div>
+          <div class="hs-desc">The server picks the TLS version and cipher suite from the client's list, and sends its own random value back. In my lab, the server selected TLSv1.3.</div>
+        </div>
+      </div>
+      <div class="hs-step" data-step="3">
+        <div class="hs-num">3</div>
+        <div class="hs-content">
+          <div class="hs-title">Certificate Exchange</div>
+          <div class="hs-desc">The server sends its TLS certificate (nginx.crt). The browser can verify this was signed by a trusted CA. In my lab the cert was self-signed, so the browser showed a warning — which I proceeded through.</div>
+        </div>
+      </div>
+      <div class="hs-step" data-step="4">
+        <div class="hs-num">4</div>
+        <div class="hs-content">
+          <div class="hs-title">Key Exchange</div>
+          <div class="hs-desc">Both sides derive the same session keys without ever sending the key over the network. This is the core of TLS security — even if you capture all the packets you cannot decrypt the session without the private key.</div>
+        </div>
+      </div>
+      <div class="hs-step" data-step="5">
+        <div class="hs-num">5</div>
+        <div class="hs-content">
+          <div class="hs-title">Encrypted Application Data</div>
+          <div class="hs-desc">All HTTP content is now encrypted. In Wireshark the payload shows only as "Application Data" — you can see packet sizes and timing but not the actual HTML, cookies, or form data.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-table">
+      <h3>HTTP vs HTTPS Comparison</h3>
+      <table>
+        <thead>
+          <tr><th>Property</th><th>HTTP</th><th>HTTPS</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Port</td><td>80</td><td>443</td></tr>
+          <tr><td>Encryption</td><td class="bad">None</td><td class="good">TLS 1.2 / 1.3</td></tr>
+          <tr><td>Content visible in Wireshark</td><td class="bad">Yes — HTML, headers, cookies</td><td class="good">No — encrypted payload</td></tr>
+          <tr><td>MitM attack possible</td><td class="bad">Yes</td><td class="good">No (with valid cert)</td></tr>
+          <tr><td>Certificate required</td><td>No</td><td>Yes</td></tr>
+          <tr><td>IP &amp; domain visible to attacker</td><td>Yes</td><td>Yes (metadata only)</td></tr>
+          <tr><td>Content readable to attacker</td><td class="bad">Yes</td><td class="good">No</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-name">Mehmet Surmeli</div>
+      <div class="footer-sub">Software Engineering · Vizja University · Warsaw, Poland</div>
+      <div class="footer-links">
+        <a href="https://github.com/mehmetuurs" target="_blank">GitHub: mehmetuurs</a>
+      </div>
+      <div class="footer-note">Network Security Lab — Nginx + TLS/SSL Portfolio Project</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
