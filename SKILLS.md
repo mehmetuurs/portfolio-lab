@@ -8,15 +8,16 @@
 - PKI lifecycle (CA, CSR, certificate signing — Ed25519)
 - Telnet vs SSH traffic analysis
 - ARP protocol analysis
+- Linux kernel network hardening (sysctl)
 - Docker container networking
 
 ## Tools & Platforms
 - Cisco Packet Tracer
 - Docker & Docker Compose
-- OpenSSL
+- OpenSSL, strongSwan
 - VirtualBox (Ubuntu VMs)
 - Wireshark / TShark
-- draw.io
+- draw.io, Astah
 
 ## Programming
 - Python (AES-256, bcrypt, CLI apps)
@@ -25,7 +26,7 @@
 - HTML / CSS / JavaScript
 - Linux command line (Ubuntu)
 
-## Subjects Completed
+## All Labs Completed
 | Lab | Topic |
 |-----|-------|
 | Lab 1 | Network Topology, OSI/TCP-IP Models, Cisco Packet Tracer |
@@ -37,6 +38,9 @@
 | Lab 5.2 | ARP Packet Analysis |
 | Lab 5 VPN | Gateway-to-Gateway IPSec VPN (strongSwan/IKEv2) |
 | Lab 6 | Nginx TLS/SSL + Docker + Wireshark (this repo) |
+| Lab 7 | IPSec VPN Full Report |
+| Lab 8.1 | Linux sysctl Network Hardening |
+| Lab 8.2 | Linux sysctl Network Hardening (Part 2) |
 
 University: Vizja University, Warsaw
 Programme: Software Engineering
