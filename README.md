@@ -1,17 +1,14 @@
 # Network Security Lab — Nginx TLS/SSL Portfolio
 
-**Mehmet Surmeli | Software Engineering | Vizja University, Warsaw**
+**Mehmet Surmeli | Student ID: 63452 | Software Engineering | Vizja University, Warsaw**
 
 ---
 
 ## Overview
 
-This repository contains the complete setup for the Network Security lab:
-**Configuring HTTPS with Nginx and TLS/SSL**.
+This repository contains the complete setup for the Network Security lab: **Configuring HTTPS with Nginx and TLS/SSL**.
 
-The goal was to build a personal portfolio website, serve it using Nginx in a Docker container,
-configure a self-signed TLS/SSL certificate, and capture + analyse the difference between
-HTTP and HTTPS traffic using Wireshark/TShark.
+The goal was to build a personal portfolio website, serve it using Nginx in a Docker container, configure a self-signed TLS/SSL certificate, and capture + analyse the difference between HTTP and HTTPS traffic using Wireshark.
 
 ---
 
@@ -26,97 +23,61 @@ portfolio-lab/
 ├── docker-compose.yml      # Docker Compose configuration
 ├── nginx.conf              # Nginx configuration with TLS
 ├── nginx.crt               # Self-signed TLS certificate (generated locally)
-├── nginx.private.key       # Private key (generated locally, NOT committed to GitHub)
+├── nginx.private.key       # Private key (NOT committed to GitHub)
+├── SKILLS.md               # Full skills and lab list
 └── README.md               # This file
 ```
-
-> **Note:** `nginx.crt` and `nginx.private.key` are generated on your local machine using OpenSSL.
-> The private key should **never** be committed to a public repository.
 
 ---
 
 ## Steps to Run
 
 ### Step 1 — Generate a Self-Signed Certificate
-
 ```bash
-openssl req \
-  -x509 \
-  -newkey rsa:4096 \
-  -keyout nginx.private.key \
-  -out nginx.crt \
-  -days 365 \
-  -nodes
+openssl req -x509 -newkey rsa:4096 -keyout nginx.private.key -out nginx.crt -days 365 -nodes
 ```
+For Common Name use: `localhost`
 
-Fill in the prompts (or press Enter for defaults). For Common Name, use `localhost`.
-
----
-
-### Step 2 — Start the Docker Container (HTTP only first)
-
-Edit `docker-compose.yml` to only expose port 80 and no volumes for nginx.conf/certs yet.
-Then run:
-
+### Step 2 — Start Docker Container
 ```bash
 docker compose up -d
 docker ps
 ```
-
-Visit: `http://localhost` — you should see the portfolio website.
-
----
+Visit: `http://localhost`
 
 ### Step 3 — Capture HTTP Traffic
-
-Open Wireshark, select your network interface, apply filter `http`, and refresh the page.
-You will see the HTML content fully visible in plaintext.
-
-Save capture as `http-capture.pcapng`.
-
----
+Open Wireshark → select `lo0` → filter `http` → refresh page → save as `http-capture.pcapng`
 
 ### Step 4 — Enable HTTPS
-
-Use the full `docker-compose.yml` (both ports 80 and 443, all volumes mounted):
-
 ```bash
 docker compose down
 docker compose up -d
 ```
-
-Visit: `https://localhost`
-Accept the browser warning (self-signed certificate).
-
----
+Visit: `https://localhost` — accept the browser warning (self-signed cert)
 
 ### Step 5 — Capture HTTPS Traffic
-
-Open Wireshark, apply filter `tls`, and refresh the HTTPS page.
-You will see the TLS handshake but **no readable content**.
-
-Save capture as `https-capture.pcapng`.
+Open Wireshark → filter `tls` → refresh page → observe TLS handshake → save as `https-capture.pcapng`
 
 ---
 
-## TLS Configuration Details
+## TLS Configuration
 
-| Item                | Value                        |
-|---------------------|------------------------------|
-| Certificate type    | Self-signed (RSA 4096-bit)   |
-| Validity            | 365 days                     |
-| Protocols enabled   | TLSv1.2, TLSv1.3             |
-| Port                | 443 (HTTPS), 80 (HTTP→redirect) |
-| Nginx image         | nginx:alpine                 |
+| Item | Value |
+|---|---|
+| Certificate type | Self-signed (RSA 4096-bit) |
+| Validity | 365 days |
+| Protocols enabled | TLSv1.2, TLSv1.3 |
+| Port | 443 (HTTPS), 80 (HTTP redirect) |
+| Nginx image | nginx:alpine |
 
 ---
 
 ## TLS Handshake Stages (Wireshark)
 
 | Stage | What happens |
-|-------|-------------|
+|---|---|
 | Client Hello | Browser sends supported TLS versions, cipher suites, random value |
-| Server Hello | Server selects TLS version and cipher suite |
+| Server Hello | Server selects TLSv1.3 and cipher suite |
 | Certificate | Server sends nginx.crt (self-signed) |
 | Key Exchange | Session keys derived — never transmitted directly |
 | Application Data | All HTTP content encrypted, unreadable in Wireshark |
@@ -134,38 +95,26 @@ Save capture as `https-capture.pcapng`.
 
 ---
 
-## Useful Commands
+## All Labs Completed — Network Security Module
 
-```bash
-# View running containers
-docker ps
-
-# View Nginx logs
-docker logs nginx-web-server
-
-# Test Nginx config inside container
-docker exec -it nginx-web-server nginx -t
-
-# Stop containers
-docker compose down
-
-# Restart containers
-docker compose restart
-```
-
----
-
-## Related Labs (Network Security Module)
-
-- **Lab 1** — Network Topology & OSI/TCP-IP Models (Cisco Packet Tracer + draw.io)
-- **Lab 3** — Access Control Lists — 10-stage ACL lab (Cisco Packet Tracer)
-- **Lab 3.1** — CIA Triad & Cryptography Research Reports
-- **Lab 4** — PKI Lifecycle with OpenSSL (Ed25519 — CA, CSR, Certificate chain)
-- **Lab 5.1** — Telnet vs SSH Traffic Analysis (tshark, Ubuntu VMs, VirtualBox)
-- **Lab 5.2** — ARP Packet Analysis (tshark, pcapng file analysis)
-- **Lab 5 (VPN)** — Gateway-to-Gateway IPSec VPN with strongSwan/IKEv2 (Ubuntu VMs)
-- **Lab 6 (this)** — Nginx TLS/SSL + Docker + Wireshark capture
+| Lab | Topic |
+|---|---|
+| Lab 1 | Network Topology, OSI/TCP-IP Models, Cisco Packet Tracer |
+| Lab 2-4 | Java Socket Programming, HTTP Client, Echo Server |
+| Lab 3 | ACL — 10 stages (Standard, Extended, IPv6, SPD) |
+| Lab 3.1 | CIA Triad & Cryptography Research (NIST) |
+| Lab 3.2 | OpenSSL Practice & UI Cryptography Exercises |
+| Lab 4 | PKI Lifecycle with OpenSSL (Ed25519) |
+| Lab 5.1 | Telnet vs SSH Traffic Analysis (tshark, Ubuntu VMs) |
+| Lab 5.2 | ARP Packet Analysis |
+| Lab 5 VPN | Gateway-to-Gateway IPSec VPN (strongSwan, IKEv2) |
+| Lab 7 | IPSec VPN Full Report |
+| Lab 8 | ICMP Traffic Filtering ACL (Cisco Packet Tracer) |
+| Lab 8.1 | Linux sysctl Network Hardening |
+| Lab 8.2 | Linux sysctl Network Hardening Part 2 |
+| Pre-Lab 9 | Docker Introduction & Container Networking |
+| Lab 9 | Nginx TLS/SSL + Docker + Wireshark (this repo) |
 
 ---
 
-*Vizja University — Network Security Module*
+*Vizja University — Network Security Module — Mehmet Surmeli 63452*
